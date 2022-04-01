@@ -1,26 +1,26 @@
 <template>
   <section class="container">
+    <NuxtLink to="/">Organism: home page</NuxtLink>
     <div>
+      <p>Logo shall be Red</p>
       <app-logo-red />
       <hr />
+      <p>Logo shall be Green</p>
       <app-logo-green />
     </div>
   </section>
 </template>
 
 <script>
-import AppLogoRed from "~/components/AppLogoRed.vue";
-import AppLogoGreen from "~/components/AppLogoGreen.vue";
-
 export default {
   components: {
-    AppLogoRed,
-    AppLogoGreen,
+    AppLogoGreen: () => import("~/components/AppLogoGreen.vue"),
+    AppLogoRed: () => import("~/components/AppLogoRed.vue"),
   },
 };
 </script>
 
-<style>
+<style scoped>
 .container {
   min-height: 100vh;
   display: flex;

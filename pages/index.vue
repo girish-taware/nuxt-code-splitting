@@ -1,8 +1,11 @@
 <template>
   <section class="container">
+    <NuxtLink to="/results">Organism: results page</NuxtLink>
     <div>
+      <p>Logo shall be Green</p>
       <app-logo-green />
       <hr />
+      <p>Logo shall be Red</p>
       <app-logo-red />
     </div>
   </section>

@@ -1,27 +1,50 @@
 <template>
-  <div>
-    <div class="VueToNuxtLogo">
+  <div class="giri-logo-green-container">
+    <div class="giri-logo-green-title">
+      <strong>AppLogoGreen Molecule Component</strong>: Dark Green text
+    </div>
+    <div class="giri-logo-green-text">This shall be dark green text</div>
+    <div class="giri-logo-green-triangle">
       <div class="Triangle Triangle--two" />
       <div class="Triangle Triangle--one" />
       <div class="Triangle Triangle--three" />
       <div class="Triangle Triangle--four" />
     </div>
+    <app-logo></app-logo>
     <Subtitle />
   </div>
 </template>
 
 <script>
+import AppLogo from "~/components/AppLogo.vue";
 import Subtitle from "~/components/Subtitle.vue";
 
 export default {
   components: {
+    AppLogo,
     Subtitle,
   },
 };
 </script>
 
 <style>
-.VueToNuxtLogo {
+app-logo {
+  margin-left: 20px;
+}
+
+.giri-logo-green-container {
+  color: lightgreen;
+}
+
+.giri-logo-green-title {
+  color: darkgreen;
+}
+
+.giri-logo-green-text {
+  color: darkgreen;
+}
+
+.giri-logo-green-triangle {
   display: inline-block;
   animation: turn 2s linear forwards 1s;
   transform: rotateX(180deg);
@@ -31,7 +54,7 @@ export default {
   width: 245px;
 }
 
-.Triangle {
+.giri-logo-green-triangle .Triangle {
   position: absolute;
   top: 0;
   left: 0;
@@ -39,13 +62,13 @@ export default {
   height: 0;
 }
 
-.Triangle--one {
+.giri-logo-green-triangle .Triangle--one {
   border-left: 105px solid transparent;
   border-right: 105px solid transparent;
   border-bottom: 180px solid #41b883;
 }
 
-.Triangle--two {
+.giri-logo-green-triangle .Triangle--two {
   top: 30px;
   left: 35px;
   animation: goright 0.5s linear forwards 3.5s;
@@ -54,7 +77,7 @@ export default {
   border-bottom: 150px solid #3b8070;
 }
 
-.Triangle--three {
+.giri-logo-green-triangle .Triangle--three {
   top: 60px;
   left: 35px;
   animation: goright 0.5s linear forwards 3.5s;
@@ -63,7 +86,7 @@ export default {
   border-bottom: 120px solid #35495e;
 }
 
-.Triangle--four {
+.giri-logo-green-triangle .Triangle--four {
   top: 120px;
   left: 70px;
   animation: godown 0.5s linear forwards 3s;
