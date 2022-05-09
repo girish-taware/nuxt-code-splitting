@@ -1,28 +1,27 @@
 <template>
   <div class="giri-logo-green-container">
+    <div>*****START: AppLogoGreen Component*****</div>
     <div class="giri-logo-green-title">
-      <strong>AppLogoGreen Molecule Component</strong>: Dark Green text
+      <strong>Molecule Component</strong>: Dark Green text
     </div>
     <div class="giri-logo-green-text">This shall be dark green text</div>
     <div class="giri-logo-green-triangle">
-      <div class="Triangle Triangle--two" />
       <div class="Triangle Triangle--one" />
-      <div class="Triangle Triangle--three" />
-      <div class="Triangle Triangle--four" />
     </div>
-    <app-logo></app-logo>
-    <Subtitle />
+    <app-info></app-info>
+    <div>+++++START: SLOT+++++</div>
+    <slot name="giri-content-for-subtitle"></slot>
+    <div>+++++END: SLOT+++++</div>
+    <div>*****END: AppLogoGreen Component*****</div>
   </div>
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
-import Subtitle from "~/components/Subtitle.vue";
+import AppInfo from "~/components/AppInfo.vue";
 
 export default {
   components: {
-    AppLogo,
-    Subtitle,
+    AppInfo,
   },
 };
 </script>
@@ -54,7 +53,7 @@ app-logo {
   width: 245px;
 }
 
-.giri-logo-green-triangle .Triangle {
+.Triangle {
   position: absolute;
   top: 0;
   left: 0;
@@ -62,37 +61,29 @@ app-logo {
   height: 0;
 }
 
-.giri-logo-green-triangle .Triangle--one {
+.Triangle--one {
   border-left: 105px solid transparent;
   border-right: 105px solid transparent;
   border-bottom: 180px solid #41b883;
 }
 
-.giri-logo-green-triangle .Triangle--two {
-  top: 30px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
-  border-right: 87.5px solid transparent;
-  border-bottom: 150px solid #3b8070;
+.giri-subtitle-container {
+   /* will be added to the subtitle because border is not scoped in subtitle component */
+  border: 2px solid pink;
+   /* will not change the scoped color of subtitle */
+  color: pink;
 }
 
-.giri-logo-green-triangle .Triangle--three {
-  top: 60px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 120px solid #35495e;
+.giri-subtitle-container-adaptable {
+    /* will not change the scoped color of subtitle */
+  color: red;
 }
 
-.giri-logo-green-triangle .Triangle--four {
-  top: 120px;
-  left: 70px;
-  animation: godown 0.5s linear forwards 3s;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #fff;
+.css-conflict-study  {
+  /* will be added to the subtitle because border is not scoped in subtitle component */
+  border: 2px solid yellow;
+  /* will not change the scoped color of subtitle */
+  color: red;
 }
 
 @keyframes turn {

@@ -1,33 +1,29 @@
 <template>
   <div class="giri-logo-red-container">
+    <div>*****START: AppLogoRed Component*****</div>
     <div class="giri-logo-red-title">
-      <strong>AppLogoRed Molecule Component</strong>: RED text
+      <strong>Molecule Component</strong>: RED text
     </div>
     <div class="giri-logo-red-text">This shall be red text</div>
     <div class="giri-logo-red-triangle">
-      <div class="Triangle Triangle--two" />
       <div class="Triangle Triangle--one" />
-      <div class="Triangle Triangle--three" />
-      <div class="Triangle Triangle--four" />
     </div>
-    <app-logo></app-logo>
-    <Subtitle class="giri-pink-color" />
+    <app-info></app-info>
+    <div>*****END: AppLogoRed Component*****</div>
   </div>
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
-import Subtitle from "~/components/Subtitle.vue";
+import AppInfo from "~/components/AppInfo.vue";
 
 export default {
   components: {
-    AppLogo,
-    Subtitle,
+    AppInfo,
   },
 };
 </script>
 
-<style>
+<style scoped>
 app-logo {
   /* app-logo is component similar to components such as ecw-text, ecw-button */
   color: #803b44; /* no conflict warning because it's not used in AppLogoGreen Component */
@@ -73,7 +69,7 @@ app-logo {
   width: 245px;
 }
 
-.giri-logo-red-triangle .Triangle {
+.Triangle {
   position: absolute;
   top: 0;
   left: 0;
@@ -81,37 +77,10 @@ app-logo {
   height: 0;
 }
 
-.giri-logo-red-triangle .Triangle--one {
+.Triangle--one {
   border-left: 105px solid transparent;
   border-right: 105px solid transparent;
   border-bottom: 180px solid red;
-}
-
-.giri-logo-red-triangle .Triangle--two {
-  top: 30px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
-  border-right: 87.5px solid transparent;
-  border-bottom: 150px solid #803b44;
-}
-
-.giri-logo-red-triangle .Triangle--three {
-  top: 60px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 120px solid #35495e;
-}
-
-.giri-logo-red-triangle .Triangle--four {
-  top: 120px;
-  left: 70px;
-  animation: godown 0.5s linear forwards 3s;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #fff;
 }
 
 @keyframes turn {
